@@ -33,3 +33,10 @@ anchor test --skip-local-validator
 - The raw IDL in `target/idl/anchor_function_tutorial.json` preserves snake_case instruction and account names
 - The generated TypeScript helper in `target/types/anchor_function_tutorial.ts` exposes camelCase names such as `boatyMcBoatface` and `anotherSigner`
 - The non-empty accounts example verifies the relationship between `#[derive(Accounts)]` structs and the generated IDL accounts list
+
+## Exercise Answers
+
+- Adding a `u64` argument to `boaty_mc_boatface` changes the generated IDL so the instruction now has one argument entry, and the generated TypeScript helper exposes that argument as `firstArg`.
+- The `mul`, `div`, and `modulo` instructions were implemented in this repo to extend the arithmetic example beyond `add` and `sub`.
+- Renaming the accounts struct from `Initialize` to `Empty` or `BoatyMcBoatface` does not change behavior by itself. What matters is which struct type each instruction uses in its `Context<...>`.
+- When the accounts struct is non-empty, its fields appear in the IDL `accounts` array. In this repo, `signer` and `another_signer` in Rust become `signer` and `anotherSigner` in the generated TypeScript helper.
