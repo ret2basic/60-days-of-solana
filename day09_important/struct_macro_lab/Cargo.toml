@@ -1,0 +1,3 @@
+[workspace]
+members = ["struct_macro_macros", "struct_macro_demo"]
+resolver = "2"

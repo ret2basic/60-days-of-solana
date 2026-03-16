@@ -1,0 +1,14 @@
+[package]
+name = "struct_macro_demo"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+compile-fail-demo = []
+
+[dependencies]
+struct_macro_macros = { path = "../struct_macro_macros" }
+
+[[example]]
+name = "destroy_attribute_fail"
+required-features = ["compile-fail-demo"]
